@@ -38,6 +38,6 @@ internal class Program
         // Assuming here the database is existing (prefer to create a new database outside of this)
         Console.WriteLine($"Starting import...");
         dacServices.ImportBacpac(bacPackage, databaseName);
-        Console.WriteLine($"Extraction completed. Bacpac saved to: {fileExportLocation}");
+        Console.WriteLine($"Import completed. Bacpac used: {fileExportLocation}");
     }
 }
