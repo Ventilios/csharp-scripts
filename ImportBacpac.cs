@@ -33,7 +33,8 @@ internal class Program
         BacPackage bacPackage = BacPackage.Load(fileExportLocation);
 
         dacServices.ProgressChanged += (sender, e) => Console.WriteLine($"{e.Status}: {e.Message}");
-        
+
+        // https://learn.microsoft.com/en-us/dotnet/api/microsoft.sqlserver.dac.dacservices.importbacpac?view=sql-dacfx-162
         // Assuming here the database is existing (prefer to create a new database outside of this)
         Console.WriteLine($"Starting import...");
         dacServices.ImportBacpac(bacPackage, databaseName);
